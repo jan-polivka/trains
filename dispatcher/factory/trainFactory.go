@@ -18,6 +18,7 @@ func GetTrain(trainType TrainType) (types.ITrain, error) {
 	if exists {
 		fmt.Println(res())
 		fmt.Println("test")
+		return res(), nil
 	}
 	if trainType == RegioSBahnType {
 		return types.NewRegioSBahn(), nil
