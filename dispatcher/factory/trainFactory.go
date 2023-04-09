@@ -5,13 +5,15 @@ import (
 	"fmt"
 )
 
+type TrainType int
+
 const (
 	RegioSBahnType = 1 << iota
 	StrassenBahnType
 )
 
-func GetTrain(trainType string) (types.ITrain, error) {
-	if trainType == "RegioSBahn" {
+func GetTrain(trainType TrainType) (types.ITrain, error) {
+	if trainType == RegioSBahnType {
 		return types.NewRegioSBahn(), nil
 	}
 	return nil, fmt.Errorf("Wrong type passed")
