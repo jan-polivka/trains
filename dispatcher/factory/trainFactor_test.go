@@ -13,6 +13,10 @@ func Test_GetTrainRegioSBahn(t *testing.T) {
 	assert.IsType(t, expected, result)
 }
 
+func Test_GetTrainStrassenBahn(t *testing.T) {
+
+}
+
 func Test_GetTrainError(t *testing.T) {
 	var result, err = GetTrain("WrongTrain")
 	assert.Nil(t, result)
