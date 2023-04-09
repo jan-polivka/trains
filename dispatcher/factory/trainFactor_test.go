@@ -2,7 +2,6 @@ package factory
 
 import (
 	"dispatcher/types"
-	"fmt"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -16,7 +15,8 @@ func Test_GetTrainRegioSBahn(t *testing.T) {
 
 func Test_GetTrainStrassenBahn(t *testing.T) {
 	var result, _ = GetTrain(StrassenBahnType)
-	fmt.Println(result)
+	var expected = types.NewStrassenBahn()
+	assert.IsType(t, expected, result)
 }
 
 func Test_GetTrainWrongType(t *testing.T) {
