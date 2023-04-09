@@ -14,7 +14,7 @@ func Test_GetTrainRegioSBahn(t *testing.T) {
 }
 
 func Test_GetTrainStrassenBahn(t *testing.T) {
-
+	var result, _ = GetTrain("StrassenBahn")
 }
 
 func Test_GetTrainError(t *testing.T) {
