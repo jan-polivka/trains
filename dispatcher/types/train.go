@@ -19,3 +19,15 @@ func NewRegioSBahn() ITrain {
 		},
 	}
 }
+
+type StrassenBahn struct {
+	Train
+}
+
+func NewStrassenBahn() ITrain {
+	return &StrassenBahn{
+		Train: Train{
+			drive: ElectricDrive,
+		},
+	}
+}
