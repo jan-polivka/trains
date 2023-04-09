@@ -16,8 +16,6 @@ func GetTrain(trainType TrainType) (types.ITrain, error) {
 	bahnTypes := map[TrainType]func() types.ITrain{1: func() types.ITrain { return types.NewRegioSBahn() }}
 	res, exists := bahnTypes[trainType]
 	if exists {
-		fmt.Println(res())
-		fmt.Println("test")
 		return res(), nil
 	}
 	return nil, fmt.Errorf("Wrong type passed")
