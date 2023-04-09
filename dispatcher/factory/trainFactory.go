@@ -13,10 +13,10 @@ const (
 )
 
 func GetTrain(trainType TrainType) (types.ITrain, error) {
-	bahnTypes := map[int]func(){}
+	bahnTypes := map[int]func(text string){1: func(text string) { fmt.Println(text) }}
 	res, exists := bahnTypes[1]
 	if exists {
-		res()
+		res("Hello")
 	}
 	if trainType == RegioSBahnType {
 		return types.NewRegioSBahn(), nil
