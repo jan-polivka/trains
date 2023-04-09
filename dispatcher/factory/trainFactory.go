@@ -14,7 +14,7 @@ const (
 
 func GetTrain(trainType TrainType) (types.ITrain, error) {
 	bahnTypes := map[int]func(text string){1: func(text string) { fmt.Println(text) }}
-	res, exists := bahnTypes[1]
+	res, exists := bahnTypes[int(trainType)]
 	if exists {
 		res("Hello")
 	}
