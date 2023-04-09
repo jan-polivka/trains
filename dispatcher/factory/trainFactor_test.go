@@ -18,3 +18,7 @@ func Test_GetTrainStrassenBahn(t *testing.T) {
 	var result, _ = GetTrain(StrassenBahnType)
 	fmt.Println(result)
 }
+
+func Test_GetTrainWrongType(t *testing.T) {
+
+}
