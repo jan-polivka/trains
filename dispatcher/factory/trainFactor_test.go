@@ -2,6 +2,7 @@ package factory
 
 import (
 	"dispatcher/types"
+	"fmt"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -15,6 +16,7 @@ func Test_GetTrainRegioSBahn(t *testing.T) {
 
 func Test_GetTrainStrassenBahn(t *testing.T) {
 	var result, _ = GetTrain("StrassenBahn")
+	fmt.Println(result)
 }
 
 func Test_GetTrainError(t *testing.T) {
