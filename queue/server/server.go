@@ -8,5 +8,5 @@ type queueServer struct {
 }
 
 func test() {
-	fmt.Println(pb)
+	fmt.Println()
 }
