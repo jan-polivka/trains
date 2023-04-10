@@ -1,0 +1,22 @@
+syntax= "proto3";
+
+option go_package = ".";
+
+package trains;
+
+service DispatchService {
+    rpc DispatchTrains (Trains) returns (DispatchAck);
+}
+
+message Train {
+    string name = 1;
+    string drive = 2;
+}
+
+message Trains {
+    repeated Train train = 1;
+}
+
+message DispatchAck {
+    int64 response = 1;
+}
