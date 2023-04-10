@@ -1,4 +1,4 @@
-module github.com/jan-polivka/trains/tree/main/proto-api
+module github.com/jan-polivka/trains/proto-api
 
 go 1.20
 

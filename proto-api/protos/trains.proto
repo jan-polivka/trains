@@ -1,6 +1,6 @@
 syntax= "proto3";
 
-option go_package = "github.com/jan-polivka/trains/proto-api";
+option go_package = "github.com/jan-polivka/trains/proto-api/protos;protos";
 
 package trains;
 

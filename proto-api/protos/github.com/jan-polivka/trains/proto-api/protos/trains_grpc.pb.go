@@ -4,7 +4,7 @@
 // - protoc             v3.12.4
 // source: trains.proto
 
-package proto_api
+package protos
 
 import (
 	context "context"
