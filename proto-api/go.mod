@@ -1,4 +1,4 @@
-module proto-api
+module github.com/jan-polivka/trains/proto-api
 
 replace github.com/jan-polivka/trains/proto-api => ../proto-api
 
