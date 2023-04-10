@@ -1,3 +1,3 @@
-module github.com/jan-polivka/trains/proto-api
+module proto-api
 
 go 1.20
