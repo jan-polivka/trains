@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	pb "github.com/jan-polivka/trains/proto-api/protos"
+	pb "proto-api/protos"
 )
 
 type queueServer struct {
