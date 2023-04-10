@@ -14,6 +14,6 @@ func test() {
 	fmt.Println()
 }
 
-func (s *queueServer) GetDrive(ctx context.Context, drive *pb.Trains) {
-	fmt.Println("test")
+func (s *queueServer) GetDrive(ctx context.Context, drive *pb.Trains) *pb.DispatchAck {
+	return &pb.DispatchAck{Response: 0}
 }
