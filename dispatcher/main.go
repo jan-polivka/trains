@@ -1,7 +1,6 @@
 package main
 
 import (
-	"flag"
 	"fmt"
 
 	"google.golang.org/grpc"
@@ -10,9 +9,7 @@ import (
 func main() {
 	fmt.Println("Hello World")
 	// var opts []grpc.DialOption
-	var serverAddr = flag.String("addr", "localhost:8080", "The server address in the format of host:port")
-	fmt.Println(*serverAddr)
-	conn, err := grpc.Dial(*serverAddr)
+	conn, err := grpc.Dial("localhost:8080")
 	if err != nil {
 		fmt.Println("something went fucky wucky")
 	}
