@@ -16,9 +16,9 @@ type dispatchServiceSever struct {
 	pb.UnimplementedDispatchServiceServer
 }
 
-func (s *dispatchServiceSever) DispatchTrains(ctx context.Context, trains *pb.Trains) (*pb.DispatchAck, error) {
+func (s *dispatchServiceSever) DispatchTrains(ctx context.Context, trains *pb.Trains) pb.DispatchAck {
 	fmt.Println("what")
-	return &pb.DispatchAck{Response: 0}, nil
+	return pb.DispatchAck{Response: 0}
 }
 
 func main() {
