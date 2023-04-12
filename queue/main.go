@@ -5,6 +5,8 @@ import (
 	"log"
 	"net"
 
+	pb "proto-api/protos"
+
 	"google.golang.org/grpc"
 )
 
@@ -16,6 +18,6 @@ func main() {
 	}
 	var opts []grpc.ServerOption
 	grpcServer := grpc.NewServer(opts...)
-	// pb.RegisterRouteGuideServer(grpcServer, newServer())
+	pb.RegisterDispatchServiceServer(grpcServer, pb.UnimplementedDispatchServiceServer{})
 	grpcServer.Serve(lis)
 }
