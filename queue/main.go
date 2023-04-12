@@ -8,6 +8,7 @@ import (
 	pb "proto-api/protos"
 
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/reflection"
 )
 
 func main() {
@@ -19,5 +20,6 @@ func main() {
 	var opts []grpc.ServerOption
 	grpcServer := grpc.NewServer(opts...)
 	pb.RegisterDispatchServiceServer(grpcServer, pb.UnimplementedDispatchServiceServer{})
+	reflection.Register(grpcServer)
 	grpcServer.Serve(lis)
 }
