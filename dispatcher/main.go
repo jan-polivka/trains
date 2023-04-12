@@ -25,7 +25,7 @@ func main() {
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
 
-	resp, err := client.DispatchTrains(ctx, &pb.Trains{Train: []*pb.Train{&pb.Train{Name: "RegioSBahn", Drive: "ElectricDrive"}}})
+	resp, err := client.DispatchTrains(ctx, &pb.Trains{Train: []*pb.Train{{Name: "RegioSBahn", Drive: "ElectricDrive"}}})
 	if err != nil {
 		fmt.Println("the response is fucked")
 	}
