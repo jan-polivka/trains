@@ -1,7 +1,6 @@
 package main
 
 import (
-	"context"
 	"fmt"
 	"log"
 	"net"
@@ -16,7 +15,7 @@ type dispatchServiceSever struct {
 	pb.UnimplementedDispatchServiceServer
 }
 
-func (s *dispatchServiceSever) DispatchTrains(ctx context.Context, trains *pb.Trains) pb.DispatchAck {
+func (s *dispatchServiceSever) DispatchTrains(trains *pb.Trains) pb.DispatchAck {
 	fmt.Println("what")
 	return pb.DispatchAck{Response: 0}
 }
