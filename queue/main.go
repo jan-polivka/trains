@@ -29,7 +29,7 @@ func main() {
 	}
 	var opts []grpc.ServerOption
 	grpcServer := grpc.NewServer(opts...)
-	// pb.RegisterDispatchServiceServer(grpcServer, dispatchServiceSever{})
+	pb.RegisterDispatchServiceServer(grpcServer, &dispatchServiceSever{})
 	reflection.Register(grpcServer)
 	grpcServer.Serve(lis)
 }
