@@ -9,11 +9,11 @@ import (
 func main() {
 	fmt.Println("Hello World")
 	// var opts []grpc.DialOption
-	conn, err := grpc.Dial("localhost:8080")
+	_, err := grpc.Dial("localhost:8080")
 	if err != nil {
 		fmt.Println("something went fucky wucky")
 	}
-	defer conn.Close()
+	// defer conn.Close()
 	// client := pb.NewDispatchServiceClient(conn)
 
 	// ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
