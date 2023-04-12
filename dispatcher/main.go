@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 
+	pb "proto-api/protos"
+
 	"google.golang.org/grpc"
 )
 
@@ -14,7 +16,8 @@ func main() {
 		fmt.Println("something went fucky wucky")
 	}
 	defer conn.Close()
-	// client := pb.NewDispatchServiceClient(conn)
+	client := pb.NewDispatchServiceClient(conn)
+	fmt.Println(client)
 
 	// ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	// defer cancel()
