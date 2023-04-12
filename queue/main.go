@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	"fmt"
 	"log"
 	"net"
@@ -10,6 +11,15 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 )
+
+type dispatchServiceSever struct {
+	pb.UnimplementedDispatchServiceServer
+}
+
+func (s *dispatchServiceSever) DispatchTrains(ctx context.Context, trains *pb.Trains) (*pb.DispatchAck, error) {
+
+	return &pb.DispatchAck{Response: 0}, nil
+}
 
 func main() {
 	fmt.Println("Hello World")
