@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	"fmt"
 	"log"
 	"net"
@@ -15,9 +16,9 @@ type dispatchServiceSever struct {
 	pb.UnimplementedDispatchServiceServer
 }
 
-func (s *dispatchServiceSever) DispatchTrains(trains *pb.Trains) pb.DispatchAck {
+func (s *dispatchServiceSever) DispatchTrains(ctx context.Context, trains *pb.Trains) (*pb.DispatchAck, error) {
 	fmt.Println("what")
-	return pb.DispatchAck{Response: 0}
+	return &pb.DispatchAck{Response: 0}, nil
 }
 
 func main() {
@@ -28,7 +29,7 @@ func main() {
 	}
 	var opts []grpc.ServerOption
 	grpcServer := grpc.NewServer(opts...)
-	pb.RegisterDispatchServiceServer(grpcServer, pb.UnimplementedDispatchServiceServer{})
+	// pb.RegisterDispatchServiceServer(grpcServer, dispatchServiceSever{})
 	reflection.Register(grpcServer)
 	grpcServer.Serve(lis)
 }
