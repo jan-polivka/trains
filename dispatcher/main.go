@@ -16,5 +16,5 @@ func main() {
 		fmt.Println("something went fucky wucky")
 	}
 	defer conn.Close()
-	// client := pb.
+	// client := pb.NewDispatchServiceClient(conn)
 }
