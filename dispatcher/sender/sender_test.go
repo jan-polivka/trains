@@ -1,7 +1,6 @@
 package sender
 
 import (
-	"fmt"
 	"testing"
 )
 
@@ -10,7 +9,6 @@ func Test_DispatchTrainsIntegration(t *testing.T) {
 	if testing.Short() {
 		t.Skip("integration test")
 	}
-	fmt.Println("checking if skipped")
 	//call DispatchTrains
 	//verify
 }
