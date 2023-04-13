@@ -30,6 +30,6 @@ func main() {
 	if err != nil {
 		fmt.Println("the response is fucked")
 	}
-	fmt.Println(resp)
+	fmt.Println(resp.Response)
 
 }
