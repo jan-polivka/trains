@@ -12,7 +12,6 @@ import (
 )
 
 func main() {
-	fmt.Println("Hello World")
 	var serverAddr = flag.String("addr", "localhost:8080", "The server address in the format of host:port")
 	conn, err := grpc.Dial(*serverAddr)
 	if err != nil {
