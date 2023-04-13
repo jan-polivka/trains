@@ -32,5 +32,5 @@ func Test_DispatchTrainsIntegration(t *testing.T) {
 	defer cancel()
 
 	res := DispatchTrains(client, ctx)
-	assert.Equal(t, 0, res)
+	assert.Equal(t, int64(0), res)
 }
