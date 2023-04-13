@@ -15,11 +15,9 @@ import (
 )
 
 func Test_DispatchTrainsIntegration(t *testing.T) {
-	//figure out short
 	if testing.Short() {
 		t.Skip("integration test")
 	}
-	//call DispatchTrains
 	var serverAddr = flag.String("addr", "localhost:8080", "The server address in the format of host:port")
 	var dialOption = grpc.WithTransportCredentials(insecure.NewCredentials())
 	conn, err := grpc.Dial(*serverAddr, dialOption)
@@ -35,5 +33,4 @@ func Test_DispatchTrainsIntegration(t *testing.T) {
 
 	res := DispatchTrains(client, ctx)
 	assert.Equal(t, 0, res)
-	//verify
 }
