@@ -1,8 +1,12 @@
 package main
 
 import (
+	"context"
 	"flag"
 	"fmt"
+	"time"
+
+	pb "proto-api/protos"
 
 	"google.golang.org/grpc"
 )
@@ -16,15 +20,15 @@ func main() {
 		fmt.Println("something went fucky wucky")
 	}
 	defer conn.Close()
-	// client := pb.NewDispatchServiceClient(conn)
+	client := pb.NewDispatchServiceClient(conn)
 
-	// ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
-	// defer cancel()
+	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+	defer cancel()
 
-	// resp, err := client.DispatchTrains(ctx, &pb.Trains{Train: []*pb.Train{{Name: "RegioSBahn", Drive: "ElectricDrive"}}})
-	// if err != nil {
-	// 	fmt.Println("the response is fucked")
-	// }
-	// fmt.Println(resp)
+	resp, err := client.DispatchTrains(ctx, &pb.Trains{Train: []*pb.Train{{Name: "RegioSBahn", Drive: "ElectricDrive"}}})
+	if err != nil {
+		fmt.Println("the response is fucked")
+	}
+	fmt.Println(resp)
 
 }
