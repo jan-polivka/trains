@@ -10,3 +10,6 @@ jobs:
     steps: 
       - name: "checkout repository"
         uses: actions/checkout@main
+          
+      - name: "ls"
+        run: ls -a
