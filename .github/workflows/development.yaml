@@ -12,4 +12,4 @@ jobs:
         run: ls -a
           
       - name: "echo"
-        run: echo "huh"?
+        run: echo $PWD?
