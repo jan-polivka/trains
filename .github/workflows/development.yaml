@@ -8,8 +8,5 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps: 
-      - name: "checkout"
-        run: ls -a
-          
-      - name: "echo"
-        run: echo $PWD?
+      - name: "checkout repository"
+        uses: actions/checkout@main
