@@ -1,0 +1,12 @@
+name: Development
+
+on: [push, pull_request]
+  
+jobs:
+  test:
+    name: Unit test
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps: 
+      - name: "checkout"
+        run: ll
