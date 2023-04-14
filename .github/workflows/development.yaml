@@ -10,3 +10,6 @@ jobs:
     steps: 
       - name: "checkout"
         run: ls -a
+          
+      - name: "echo"
+        run: echo "huh"?
