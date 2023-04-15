@@ -32,6 +32,9 @@ jobs:
       - name: Change directory to dispatcher
         run: cd ./dispatcher
 
+      - name: "ls"
+        run: ls -a
+
       - name: Install dependencies
         run: go get -v
 
