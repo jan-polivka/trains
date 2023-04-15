@@ -29,14 +29,9 @@ jobs:
           ./queue &
           sleep 5
 
-      - name: Change directory to dispatcher
-        run: cd ./dispatcher
-
-      - name: "ls"
-        run: ls -a
-
-      - name: Install dependencies
-        run: go get -v
-
-      - name: Run integration test
-        run: go test -v ./dispatcher/... -run Integration
+      - name: Run test
+        run: |
+        cd ./dispatcher
+        ls -a
+        go get -v
+        go test -v ./dispatcher/... -run Integration
