@@ -30,7 +30,7 @@ jobs:
           sleep 5
 
       - name: Change directory to dispatcher
-        run: cd dispatcher
+        run: cd ./dispatcher
 
       - name: Install dependencies
         run: go get -v
