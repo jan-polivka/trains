@@ -12,7 +12,6 @@ jobs:
         uses: actions/checkout@main
           
       - name: setup go
-        uses: actions/setup-go@v4
           
       - name: echo stuff
         run: |
@@ -42,6 +41,7 @@ jobs:
         run: |
           cd ./dispatcher
           ls -a
-          go get -v ./...
+        uses: actions/setup-go@v4
+        run:  go get -v ./...
           
         # go test -v ./dispatcher/... -run Integration
