@@ -2,12 +2,12 @@ package main
 
 import (
 	"context"
-	"dispatcher/sender"
 	"flag"
 	"fmt"
 	"time"
 
-	pb "proto-api/protos"
+	"github.com/jan-polivka/trains/dispatcher/sender"
+	pb "github.com/jan-polivka/trains/proto-api/protos"
 
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"

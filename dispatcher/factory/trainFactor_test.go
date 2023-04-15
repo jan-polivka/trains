@@ -1,9 +1,9 @@
 package factory
 
 import (
-	"dispatcher/types"
 	"testing"
 
+	"github.com/jan-polivka/trains/dispatcher/types"
 	"github.com/stretchr/testify/assert"
 )
 

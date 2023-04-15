@@ -6,7 +6,7 @@ import (
 	"log"
 	"net"
 
-	pb "proto-api/protos"
+	pb "github.com/jan-polivka/trains/proto-api/protos"
 
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"

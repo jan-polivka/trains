@@ -1,8 +1,9 @@
 package factory
 
 import (
-	"dispatcher/types"
 	"fmt"
+
+	"github.com/jan-polivka/trains/dispatcher/types"
 )
 
 type TrainType int

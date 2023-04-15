@@ -3,7 +3,8 @@ package sender
 import (
 	"context"
 	"fmt"
-	pb "proto-api/protos"
+
+	pb "github.com/jan-polivka/trains/proto-api/protos"
 )
 
 func DispatchTrains(client pb.DispatchServiceClient, ctx context.Context) int64 {

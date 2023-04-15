@@ -11,7 +11,7 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 
-	pb "proto-api/protos"
+	pb "github.com/jan-polivka/trains/proto-api/protos"
 )
 
 func Test_DispatchTrainsIntegration(t *testing.T) {
