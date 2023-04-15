@@ -11,6 +11,9 @@ jobs:
       - name: "checkout repository"
         uses: actions/checkout@main
           
+      - name: setup go
+        uses: actions/setup-go@v4
+          
       - name: echo stuff
         run: |
           echo $PATH
