@@ -31,7 +31,7 @@ jobs:
 
       - name: Run test
         run: |
-        cd ./dispatcher
-        ls -a
-        go get -v
-        go test -v ./dispatcher/... -run Integration
+          cd ./dispatcher
+          ls -a
+          go get -v
+          go test -v ./dispatcher/... -run Integration
