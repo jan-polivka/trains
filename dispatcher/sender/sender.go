@@ -9,8 +9,6 @@ import (
 
 func DispatchTrains(client pb.DispatchServiceClient, ctx context.Context) int64 {
 
-	//test
-
 	resp, err := client.DispatchTrains(ctx, &pb.Trains{Train: []*pb.Train{{Name: "RegioSBahn", Drive: "ElectricDrive"}}})
 	if err != nil {
 		fmt.Println("the response is fucked")
