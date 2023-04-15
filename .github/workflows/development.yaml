@@ -36,10 +36,10 @@ jobs:
           sleep 5
 
       - name: Run test
+        uses: actions/setup-go@v4
         run: |
           cd ./dispatcher
           ls -a
-        uses: actions/setup-go@v4
-        run:  go get -v ./...
+          go get -v ./...
           
         # go test -v ./dispatcher/... -run Integration
