@@ -46,6 +46,11 @@ jobs:
       #     cd ./dispatcher
       #     ls -a
       #     go get -v ./...
+           
+      - name: echo check
+        run: |
+          ls /usr/local/go
+          ls /go
       
       - name: Run test
         run: |
