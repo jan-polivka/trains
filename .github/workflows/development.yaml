@@ -28,6 +28,11 @@ jobs:
         run: |
           ./queue/queue &
           sleep 5
+          
+      - name: Get proto-api
+        run : |
+          cd ./proto-api
+          go get -v ./...
 
       - name: Run test
         run: |
