@@ -14,26 +14,26 @@ jobs:
       - name: "ls"
         run: ls -a
 
-      - name: Change directory to queue
-        run: cd queue
+      # - name: Change directory to queue
+      #   run: cd queue
 
-      - name: "ls"
-        run: ls -a
+      # - name: "ls"
+      #   run: ls -a
           
       - name: Build the project
         run: |
-          go build -v -o queue
+          go build -v -o queue queue
 
       - name: Start the gRPC server
         run: |
           ./queue &
           sleep 5
 
-      - name: Change directory to dispatcher
-        run: cd ../dispatcher
+      # - name: Change directory to dispatcher
+      #   run: cd ../d
 
       - name: Install dependencies
         run: go get -v
 
       - name: Run integration test
-        run: go test -v . -run Integration
+        run: go test -v ./dispatcher/... -run Integration
