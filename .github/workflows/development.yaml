@@ -47,10 +47,10 @@ jobs:
       #     ls -a
       #     go get -v ./...
            
-      - name: echo check
-        run: |
-          which go
-          ls /go
+      # - name: echo check
+      #   run: |
+      #     which go
+      #     ls /go
       
       - name: Run test
         run: |
