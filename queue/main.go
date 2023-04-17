@@ -1,24 +1,16 @@
 package main
 
 import (
-	"context"
 	"fmt"
 	"log"
 	"net"
 
 	pb "github.com/jan-polivka/trains/proto-api/protos"
+	"github.com/jan-polivka/trains/queue/server"
 
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 )
-
-type dispatchServiceSever struct {
-	pb.UnimplementedQueueServiceServer
-}
-
-func (s *dispatchServiceSever) DispatchTrains(ctx context.Context, trains *pb.Trains) (*pb.DispatchAck, error) {
-	return &pb.DispatchAck{Response: 0}, nil
-}
 
 func main() {
 	fmt.Println("Hello World")
@@ -28,7 +20,7 @@ func main() {
 	}
 	var opts []grpc.ServerOption
 	grpcServer := grpc.NewServer(opts...)
-	pb.RegisterQueueServiceServer(grpcServer, &dispatchServiceSever{})
+	pb.RegisterQueueServiceServer(grpcServer, &server.QueueServiceServer{})
 	reflection.Register(grpcServer)
 	grpcServer.Serve(lis)
 }
