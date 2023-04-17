@@ -17,7 +17,6 @@ type dispatchServiceSever struct {
 }
 
 func (s *dispatchServiceSever) DispatchTrains(ctx context.Context, trains *pb.Trains) (*pb.DispatchAck, error) {
-	fmt.Println("what")
 	return &pb.DispatchAck{Response: 0}, nil
 }
 
