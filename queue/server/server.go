@@ -15,6 +15,10 @@ func test() {
 	fmt.Println()
 }
 
+func (s *queueServer) DispatchTrains(ctx context.Context, trains *pb.Trains) (*pb.DispatchAck, error) {
+	return &pb.DispatchAck{Response: 0}, nil
+}
+
 func (s *queueServer) GetTrain(ctx context.Context, drive *pb.Trains) *pb.DispatchAck {
 	return &pb.DispatchAck{Response: 0}
 }
