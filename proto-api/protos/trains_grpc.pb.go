@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.12.4
-// source: proto-api/protos/trains.proto
+// source: trains.proto
 
 package protos
 
@@ -101,5 +101,5 @@ var DispatchService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "proto-api/protos/trains.proto",
+	Metadata: "trains.proto",
 }
