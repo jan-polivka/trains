@@ -26,7 +26,7 @@ func Test_DispatchTrainsIntegration(t *testing.T) {
 		fmt.Println("something went fucky wucky")
 	}
 	defer conn.Close()
-	client := pb.NewDispatchServiceClient(conn)
+	client := pb.NewQueueServiceClient(conn)
 
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()

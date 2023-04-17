@@ -13,7 +13,7 @@ import (
 )
 
 type dispatchServiceSever struct {
-	pb.UnimplementedDispatchServiceServer
+	pb.UnimplementedQueueServiceServer
 }
 
 func (s *dispatchServiceSever) DispatchTrains(ctx context.Context, trains *pb.Trains) (*pb.DispatchAck, error) {
@@ -29,7 +29,7 @@ func main() {
 	}
 	var opts []grpc.ServerOption
 	grpcServer := grpc.NewServer(opts...)
-	pb.RegisterDispatchServiceServer(grpcServer, &dispatchServiceSever{})
+	pb.RegisterQueueServiceServer(grpcServer, &dispatchServiceSever{})
 	reflection.Register(grpcServer)
 	grpcServer.Serve(lis)
 }

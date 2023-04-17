@@ -18,86 +18,86 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// DispatchServiceClient is the client API for DispatchService service.
+// QueueServiceClient is the client API for QueueService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type DispatchServiceClient interface {
+type QueueServiceClient interface {
 	DispatchTrains(ctx context.Context, in *Trains, opts ...grpc.CallOption) (*DispatchAck, error)
 }
 
-type dispatchServiceClient struct {
+type queueServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewDispatchServiceClient(cc grpc.ClientConnInterface) DispatchServiceClient {
-	return &dispatchServiceClient{cc}
+func NewQueueServiceClient(cc grpc.ClientConnInterface) QueueServiceClient {
+	return &queueServiceClient{cc}
 }
 
-func (c *dispatchServiceClient) DispatchTrains(ctx context.Context, in *Trains, opts ...grpc.CallOption) (*DispatchAck, error) {
+func (c *queueServiceClient) DispatchTrains(ctx context.Context, in *Trains, opts ...grpc.CallOption) (*DispatchAck, error) {
 	out := new(DispatchAck)
-	err := c.cc.Invoke(ctx, "/trains.DispatchService/DispatchTrains", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/trains.QueueService/DispatchTrains", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// DispatchServiceServer is the server API for DispatchService service.
-// All implementations must embed UnimplementedDispatchServiceServer
+// QueueServiceServer is the server API for QueueService service.
+// All implementations must embed UnimplementedQueueServiceServer
 // for forward compatibility
-type DispatchServiceServer interface {
+type QueueServiceServer interface {
 	DispatchTrains(context.Context, *Trains) (*DispatchAck, error)
-	mustEmbedUnimplementedDispatchServiceServer()
+	mustEmbedUnimplementedQueueServiceServer()
 }
 
-// UnimplementedDispatchServiceServer must be embedded to have forward compatible implementations.
-type UnimplementedDispatchServiceServer struct {
+// UnimplementedQueueServiceServer must be embedded to have forward compatible implementations.
+type UnimplementedQueueServiceServer struct {
 }
 
-func (UnimplementedDispatchServiceServer) DispatchTrains(context.Context, *Trains) (*DispatchAck, error) {
+func (UnimplementedQueueServiceServer) DispatchTrains(context.Context, *Trains) (*DispatchAck, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DispatchTrains not implemented")
 }
-func (UnimplementedDispatchServiceServer) mustEmbedUnimplementedDispatchServiceServer() {}
+func (UnimplementedQueueServiceServer) mustEmbedUnimplementedQueueServiceServer() {}
 
-// UnsafeDispatchServiceServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to DispatchServiceServer will
+// UnsafeQueueServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to QueueServiceServer will
 // result in compilation errors.
-type UnsafeDispatchServiceServer interface {
-	mustEmbedUnimplementedDispatchServiceServer()
+type UnsafeQueueServiceServer interface {
+	mustEmbedUnimplementedQueueServiceServer()
 }
 
-func RegisterDispatchServiceServer(s grpc.ServiceRegistrar, srv DispatchServiceServer) {
-	s.RegisterService(&DispatchService_ServiceDesc, srv)
+func RegisterQueueServiceServer(s grpc.ServiceRegistrar, srv QueueServiceServer) {
+	s.RegisterService(&QueueService_ServiceDesc, srv)
 }
 
-func _DispatchService_DispatchTrains_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _QueueService_DispatchTrains_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(Trains)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DispatchServiceServer).DispatchTrains(ctx, in)
+		return srv.(QueueServiceServer).DispatchTrains(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/trains.DispatchService/DispatchTrains",
+		FullMethod: "/trains.QueueService/DispatchTrains",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DispatchServiceServer).DispatchTrains(ctx, req.(*Trains))
+		return srv.(QueueServiceServer).DispatchTrains(ctx, req.(*Trains))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// DispatchService_ServiceDesc is the grpc.ServiceDesc for DispatchService service.
+// QueueService_ServiceDesc is the grpc.ServiceDesc for QueueService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var DispatchService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "trains.DispatchService",
-	HandlerType: (*DispatchServiceServer)(nil),
+var QueueService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "trains.QueueService",
+	HandlerType: (*QueueServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "DispatchTrains",
-			Handler:    _DispatchService_DispatchTrains_Handler,
+			Handler:    _QueueService_DispatchTrains_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

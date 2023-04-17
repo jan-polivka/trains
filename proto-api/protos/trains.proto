@@ -4,7 +4,7 @@ option go_package = "github.com/jan-polivka/proto-api/protos;protos";
 
 package trains;
 
-service DispatchService {
+service QueueService {
     rpc DispatchTrains (Trains) returns (DispatchAck);
 }
 

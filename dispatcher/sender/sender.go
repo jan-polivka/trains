@@ -7,7 +7,7 @@ import (
 	pb "github.com/jan-polivka/trains/proto-api/protos"
 )
 
-func DispatchTrains(client pb.DispatchServiceClient, ctx context.Context) int64 {
+func DispatchTrains(client pb.QueueServiceClient, ctx context.Context) int64 {
 
 	resp, err := client.DispatchTrains(ctx, &pb.Trains{Train: []*pb.Train{{Name: "RegioSBahn", Drive: "ElectricDrive"}}})
 	if err != nil {
