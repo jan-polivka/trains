@@ -8,6 +8,7 @@ import (
 )
 
 type queueServer struct {
+	pb.UnimplementedQueueServiceServer
 }
 
 func test() {
