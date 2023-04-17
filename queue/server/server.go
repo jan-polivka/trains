@@ -6,10 +6,10 @@ import (
 	pb "github.com/jan-polivka/trains/proto-api/protos"
 )
 
-type queueServiceServer struct {
+type QueueServiceServer struct {
 	pb.UnimplementedQueueServiceServer
 }
 
-func (s *queueServiceServer) DispatchTrains(ctx context.Context, trains *pb.Trains) (*pb.DispatchAck, error) {
+func (s *QueueServiceServer) DispatchTrains(ctx context.Context, trains *pb.Trains) (*pb.DispatchAck, error) {
 	return &pb.DispatchAck{Response: 0}, nil
 }
